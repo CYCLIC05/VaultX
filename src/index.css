@@ -1,74 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Vault Design System - Dark Glassmorphism */
+/* Vault Design System - Glassmorphism with Light/Dark */
 
 @layer base {
   :root {
-    /* Pure black base */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* Light mode - clean white with green accents */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
 
-    /* Card with glassmorphism - deep charcoal */
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    /* Popover */
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    /* Vault Green - #00ff7f = HSL 150 100% 50% */
-    --primary: 150 100% 50%;
-    --primary-foreground: 0 0% 0%;
+    /* Vault Green */
+    --primary: 150 100% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary - charcoal */
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 150 10% 93%;
+    --secondary-foreground: 0 0% 15%;
 
-    /* Muted - darker charcoal */
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 150 5% 92%;
+    --muted-foreground: 0 0% 40%;
 
-    /* Accent - subtle green tint */
-    --accent: 150 20% 15%;
-    --accent-foreground: 150 100% 50%;
+    --accent: 150 30% 92%;
+    --accent-foreground: 150 80% 30%;
 
-    /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders - subtle glass edge */
-    --border: 0 0% 18%;
-    --input: 0 0% 15%;
-    --ring: 150 100% 50%;
+    --border: 150 10% 88%;
+    --input: 150 10% 90%;
+    --ring: 150 100% 35%;
 
     --radius: 0.75rem;
 
-    /* Sidebar */
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 150 100% 50%;
-    --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 150 100% 50%;
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 150 100% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 15% 94%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 150 10% 90%;
+    --sidebar-ring: 150 100% 35%;
 
     /* Custom Vault tokens */
-    --vault-green: 150 100% 50%;
-    --vault-green-glow: 150 100% 60%;
-    --vault-charcoal: 0 0% 8%;
-    --vault-charcoal-light: 0 0% 12%;
-    --glass-bg: 0 0% 100% / 0.03;
-    --glass-border: 0 0% 100% / 0.08;
-    --glass-highlight: 0 0% 100% / 0.05;
+    --vault-green: 150 100% 35%;
+    --vault-green-glow: 150 100% 45%;
+    --vault-charcoal: 0 0% 96%;
+    --vault-charcoal-light: 0 0% 98%;
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 0% / 0.08;
+    --glass-highlight: 0 0% 100% / 0.9;
+
+    /* Accent colors */
+    --vault-cyan: 180 80% 45%;
+    --vault-purple: 270 70% 55%;
+    --vault-orange: 30 95% 55%;
   }
 
   .dark {
-    /* Same as light - always dark mode */
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
     --card: 0 0% 8%;
@@ -103,6 +99,9 @@
     --glass-bg: 0 0% 100% / 0.03;
     --glass-border: 0 0% 100% / 0.08;
     --glass-highlight: 0 0% 100% / 0.05;
+    --vault-cyan: 180 100% 50%;
+    --vault-purple: 270 100% 70%;
+    --vault-orange: 30 100% 60%;
   }
 }
 
@@ -116,7 +115,6 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* JetBrains Mono for numerical data */
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
@@ -125,7 +123,14 @@
 @layer components {
   /* Glassmorphism card */
   .glass-card {
-    @apply bg-card/40 backdrop-blur-xl border border-white/[0.08] rounded-2xl;
+    @apply bg-card/60 backdrop-blur-xl border border-border rounded-2xl;
+    box-shadow: 
+      0 0 0 1px hsl(var(--glass-border)) inset,
+      0 20px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+
+  .dark .glass-card {
+    @apply bg-card/40;
     box-shadow: 
       0 0 0 1px rgba(255, 255, 255, 0.05) inset,
       0 20px 50px -12px rgba(0, 0, 0, 0.5);
@@ -133,15 +138,30 @@
 
   /* 3D tiltable glass card */
   .glass-card-3d {
-    @apply bg-card/30 backdrop-blur-xl border border-white/[0.1] rounded-2xl;
+    @apply bg-card/50 backdrop-blur-xl border border-border rounded-2xl;
+    box-shadow: 
+      0 0 0 1px hsl(var(--glass-border)) inset,
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      0 0 40px hsl(var(--vault-green) / 0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .dark .glass-card-3d {
+    @apply bg-card/30;
     box-shadow: 
       0 0 0 1px rgba(255, 255, 255, 0.06) inset,
       0 8px 32px rgba(0, 0, 0, 0.4),
       0 0 40px rgba(0, 255, 127, 0.05);
-    transition: box-shadow 0.3s ease;
   }
 
   .glass-card-3d:hover {
+    box-shadow: 
+      0 0 0 1px hsl(var(--glass-border)) inset,
+      0 12px 40px rgba(0, 0, 0, 0.12),
+      0 0 60px hsl(var(--vault-green) / 0.15);
+  }
+
+  .dark .glass-card-3d:hover {
     box-shadow: 
       0 0 0 1px rgba(255, 255, 255, 0.1) inset,
       0 12px 40px rgba(0, 0, 0, 0.5),
@@ -151,27 +171,31 @@
   /* Green glow effect */
   .vault-glow {
     box-shadow: 
-      0 0 20px rgba(0, 255, 127, 0.15),
-      0 0 40px rgba(0, 255, 127, 0.1),
-      0 0 60px rgba(0, 255, 127, 0.05);
+      0 0 20px hsl(var(--vault-green) / 0.15),
+      0 0 40px hsl(var(--vault-green) / 0.1),
+      0 0 60px hsl(var(--vault-green) / 0.05);
   }
 
   /* Text gradient for emphasis */
   .text-vault-gradient {
-    @apply bg-gradient-to-r from-primary to-emerald-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-emerald-400 to-teal-400 bg-clip-text text-transparent;
   }
 
   /* Subtle grid background pattern */
   .grid-pattern {
     background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      linear-gradient(hsl(var(--foreground) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground) / 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
   /* Code/terminal style block */
   .code-block {
-    @apply font-mono bg-black/60 border border-white/10 rounded-lg px-4 py-3 text-sm;
+    @apply font-mono bg-card/80 border border-border rounded-lg px-4 py-3 text-sm;
+  }
+
+  .dark .code-block {
+    @apply bg-black/60 border-border;
   }
 
   /* Stat number styling */
@@ -181,26 +205,44 @@
 
   /* Feature card hover */
   .feature-card {
-    @apply glass-card p-6 transition-all duration-300 hover:border-primary/30 hover:bg-card/60;
+    @apply glass-card p-6 transition-all duration-300 hover:border-primary/30 hover:bg-card/80;
   }
 
   /* Announcement badge */
   .announcement-badge {
-    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm;
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border text-sm;
   }
 
   /* Hero button primary */
   .btn-vault {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:bg-primary/90;
-    box-shadow: 0 0 20px rgba(0, 255, 127, 0.3);
+    box-shadow: 0 0 20px hsl(var(--vault-green) / 0.3);
   }
 
   .btn-vault:hover {
-    box-shadow: 0 0 30px rgba(0, 255, 127, 0.5);
+    box-shadow: 0 0 30px hsl(var(--vault-green) / 0.5);
+    transform: translateY(-1px);
   }
 
   /* Outline button */
   .btn-outline-vault {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-white/20 text-foreground font-medium rounded-lg transition-all duration-300 hover:border-primary/50 hover:bg-white/5;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-border text-foreground font-medium rounded-lg transition-all duration-300 hover:border-primary/50 hover:bg-accent;
+  }
+
+  .btn-outline-vault:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Cursor trail effect */
+  .cursor-glow {
+    pointer-events: none;
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, hsl(var(--vault-green) / 0.08) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: opacity 0.3s;
   }
 }

@@ -1,8 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { 
-  ArrowRightLeft, LineChart, MessageCircle, ShoppingCart, 
-  Send, Coins, Users, Image, Sparkles 
+import {
+  ArrowRightLeft, LineChart, MessageCircle, ShoppingCart,
+  Send, Coins, Users, Image, Sparkles
 } from "lucide-react";
 import GlassCard3D from "./GlassCard3D";
 import ParallaxSection from "./ParallaxSection";
@@ -10,15 +10,15 @@ import FloatingCharacter from "./FloatingCharacter";
 import astronautImg from "@/assets/astronaut.png";
 
 const features = [
-  { icon: ArrowRightLeft, title: "Bridge & Swap Across Chains", description: "Seamlessly move assets between Ethereum, Base, Solana, and Polygon with the best rates and lowest fees", highlight: true },
-  { icon: LineChart, title: "Technical Analysis", description: "Take emotion out of trading and make data-driven decisions." },
-  { icon: MessageCircle, title: "Social Sentiment", description: "Get real-time social sentiment analysis for any token or project" },
-  { icon: ShoppingCart, title: "Place Limit Orders", description: "Never miss the dip or the pump. Set your own price and let Vault do the rest." },
-  { icon: Send, title: "Buy and Send Tokens", description: "Easily purchase and send digital tokens—just like sending money to a friend." },
-  { icon: Coins, title: "Launch Tokens", description: "Create your own digital token on Base and Solana in a few taps. No tech skills needed." },
-  { icon: Users, title: "Copy Top Traders", description: "Copy trade directly in the social feed with a simple message." },
-  { icon: Image, title: "Transfer NFTs", description: "Send your digital collectibles or art to anyone, instantly and securely." },
-  { icon: Sparkles, title: "More Coming", description: "We're always adding new features to make things easier and more fun for everyone." },
+  { icon: ArrowRightLeft, title: "Bridge Across Chains", description: "Seamlessly move assets between TON, Sui, Sei, and Monad with the best rates and lowest fees", highlight: true },
+  { icon: LineChart, title: "Technical Analysis", description: "Take emotion out of trading and make data-driven decisions on TON markets." },
+  { icon: MessageCircle, title: "Social Sentiment", description: "Get real-time social sentiment analysis for any TON token or project" },
+  { icon: ShoppingCart, title: "Place Limit Orders", description: "Never miss the dip or the pump. Set your price on DeDust and Vault does the rest." },
+  { icon: Send, title: "Buy and Send Tokens", description: "Easily purchase and send TON tokens—just like sending money to a friend." },
+  { icon: Coins, title: "Launch Tokens", description: "Create your own token on TON in a few taps. No tech skills needed." },
+  { icon: Users, title: "Copy Top Traders", description: "Copy trade the best TON traders directly in the social feed." },
+  { icon: Image, title: "Transfer NFTs", description: "Send your TON NFTs and collectibles to anyone, instantly and securely." },
+  { icon: Sparkles, title: "More Coming", description: "We're always adding new features — Monad and Sei integrations expanding soon." },
 ];
 
 const FeaturesSection = () => {
@@ -48,8 +48,8 @@ const FeaturesSection = () => {
               What can <span className="text-vault-gradient">Vault</span> do?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Vault is the easiest way to trade crypto and more! An advanced AI agent
-              that can help you swap, research, and more.
+              Vault is the easiest way to trade on TON and bridge across chains. An advanced AI agent
+              for swapping, bridging to Sui, Sei & Monad, and more.
             </p>
           </motion.div>
         </ParallaxSection>

@@ -17,7 +17,7 @@ const StatsSection = () => {
   return (
     <section ref={ref} className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-      
+
       <FloatingCharacter
         src={rocketImg}
         alt="Rocket"
@@ -36,13 +36,13 @@ const StatsSection = () => {
             className="text-center mb-16"
           >
             <p className="text-sm text-muted-foreground font-mono uppercase tracking-wider mb-4">
-              Also Available: The Vault Agent
+              Powered by TON Blockchain
             </p>
             <h2 className="text-4xl md:text-6xl font-bold mb-4">
               Trade with <span className="text-vault-gradient">Vault</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The crypto AI agent that watches your wallets, researches markets, executes trades and more.
+              The AI agent on TON that watches your wallets, bridges to Sui, Sei & Monad, and executes trades.
             </p>
           </motion.div>
         </ParallaxSection>
@@ -56,10 +56,10 @@ const StatsSection = () => {
         >
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              "Give me $VAULT market data",
-              "Bridge $5 of ETH on Base to Solana",
-              "Send @0xDeployer on X $5 of $VAULT",
-              "What are the top coins on Base?",
+              "Give me $VAULT market data on TON",
+              "Bridge 100 TON to Sui network",
+              "Swap TON for USDT on DeDust",
+              "What are the top tokens on Sei?",
             ].map((prompt, i) => (
               <GlassCard3D key={i} className="px-4 py-3">
                 <span className="text-sm text-muted-foreground font-mono">{prompt}</span>
@@ -82,7 +82,7 @@ const StatsSection = () => {
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
               className="text-center"
             >
-              <div className="stat-number text-primary drop-shadow-[0_0_20px_rgba(0,255,127,0.4)]">{stat.value}</div>
+              <div className="stat-number text-primary drop-shadow-[0_0_20px_hsl(var(--vault-green)/0.4)]">{stat.value}</div>
               <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
             </motion.div>
           ))}
@@ -94,7 +94,7 @@ const StatsSection = () => {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="flex justify-center items-center gap-8 mt-16 opacity-40"
         >
-          {["Coinbase", "Polygon", "Solana", "0x", "Zapper"].map((name) => (
+          {["TON", "Sui", "Sei", "Monad", "DeDust"].map((name) => (
             <div key={name} className="font-mono text-sm">{name}</div>
           ))}
         </motion.div>

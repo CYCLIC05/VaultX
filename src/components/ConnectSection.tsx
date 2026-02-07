@@ -7,11 +7,11 @@ import FloatingCharacter from "./FloatingCharacter";
 import mascotImg from "@/assets/vault-mascot.png";
 
 const platforms = [
-  { icon: Terminal, name: "Terminal", description: "Access your private terminal to trade, earn yield, and manage your wallet — all powered by AI.", cta: "Open Terminal", link: "#", featured: true },
-  { icon: Globe, name: "Base App", description: "DM or add Vault to your group chat right within Coinbase's new Base App.", cta: "Open in Base", link: "#" },
-  { icon: Send, name: "Telegram", description: "Chat with Vault on Telegram, in private or in group chats.", cta: "Start on Telegram", link: "#", isNew: true },
-  { icon: Twitter, name: "X", description: "Chat with Vault on X to buy and sell tokens, check prices, and share trades.", cta: "Chat on X", link: "#" },
-  { icon: MessageSquare, name: "Farcaster", description: "Trade and earn directly from your casts — powered by the open social web.", cta: "Open on Farcaster", link: "#" },
+  { icon: Terminal, name: "Terminal", description: "Access your private terminal to trade on TON, bridge to Sui & Sei, and manage your wallet — all powered by AI.", cta: "Open Terminal", link: "#", featured: true },
+  { icon: Globe, name: "TON App", description: "Use Vault directly inside your TON wallet app for seamless trading.", cta: "Open in TON", link: "#" },
+  { icon: Send, name: "Telegram", description: "Chat with Vault on Telegram — the native home of TON blockchain.", cta: "Start on Telegram", link: "#", isNew: true },
+  { icon: Twitter, name: "X", description: "Chat with Vault on X to buy and sell TON tokens, check prices, and share trades.", cta: "Chat on X", link: "#" },
+  { icon: MessageSquare, name: "Farcaster", description: "Trade and bridge directly from your casts — powered by the open social web.", cta: "Open on Farcaster", link: "#" },
   { icon: Globe, name: "XMTP", description: "Chat with Vault on XMTP, the decentralized messaging protocol.", cta: "Coming Soon", link: "#", disabled: true },
 ];
 
@@ -43,7 +43,7 @@ const ConnectSection = () => {
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Connect with Vault on your favorite apps and platforms.
-              Chat with Vault on X, Farcaster, XMTP, and more!
+              Telegram is our home — the native platform for TON.
             </p>
           </motion.div>
         </ParallaxSection>
@@ -62,7 +62,7 @@ const ConnectSection = () => {
                     New
                   </span>
                 )}
-                <div className="w-10 h-10 rounded-xl bg-white/5 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/10">
+                <div className="w-10 h-10 rounded-xl bg-secondary backdrop-blur-sm flex items-center justify-center mb-4 border border-border">
                   <platform.icon className={`w-5 h-5 ${platform.featured ? 'text-primary' : 'text-muted-foreground'}`} />
                 </div>
                 <h3 className="font-semibold mb-2">{platform.name}</h3>

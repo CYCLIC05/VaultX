@@ -10,17 +10,17 @@ const features = [
   {
     icon: Cpu,
     title: "Plug-in Skills",
-    description: "Community-built skills for trading, social, defi. One-click install. Your agent gets smarter over time.",
+    description: "Community-built skills for trading, bridging, and DeFi on TON. One-click install.",
   },
   {
     icon: Wallet,
     title: "Built-in Wallet",
-    description: "Every agent gets a cross-chain wallet. Trade, deploy contracts, manage defi. No extra setup.",
+    description: "Cross-chain wallet for TON, Sui, Sei & Monad. Trade and manage DeFi with zero setup.",
   },
   {
     icon: Rocket,
     title: "Token Launchpad",
-    description: "Fair launch a token for your agent. Trading fees flow back to fund compute. Self-sustaining from day one.",
+    description: "Fair launch tokens on TON. Trading fees fund your agent's compute. Self-sustaining from day one.",
   },
 ];
 
@@ -29,8 +29,11 @@ const HeroSection = () => {
     <section className="relative min-h-screen pt-32 pb-20 overflow-hidden">
       <Scene3D />
       <div className="absolute inset-0 grid-pattern opacity-30" />
-      
-      {/* Floating characters */}
+
+      {/* Gradient orbs */}
+      <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-20 right-1/4 w-72 h-72 bg-[hsl(var(--vault-cyan))]/10 rounded-full blur-[100px] pointer-events-none" />
+
       <FloatingCharacter
         src={mascotImg}
         alt="Vault Mascot"
@@ -49,32 +52,33 @@ const HeroSection = () => {
       />
 
       {/* Floating bubbles */}
-      {[...Array(6)].map((_, i) => (
+      {[...Array(8)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20"
           style={{
-            width: 20 + Math.random() * 40,
-            height: 20 + Math.random() * 40,
-            left: `${10 + Math.random() * 80}%`,
-            top: `${10 + Math.random() * 80}%`,
+            width: 12 + Math.random() * 40,
+            height: 12 + Math.random() * 40,
+            left: `${5 + Math.random() * 90}%`,
+            top: `${5 + Math.random() * 90}%`,
           }}
           animate={{
             y: [0, -30, 0],
             x: [0, 10, -10, 0],
-            scale: [1, 1.1, 1],
+            scale: [1, 1.15, 1],
+            opacity: [0.5, 0.8, 0.5],
           }}
           transition={{
-            duration: 4 + Math.random() * 3,
+            duration: 4 + Math.random() * 4,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: i * 0.5,
+            delay: i * 0.4,
           }}
         />
       ))}
-      
+
       <div className="container mx-auto px-4 relative z-10">
-        {/* Announcement badge */}
+        {/* Badge */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -83,27 +87,29 @@ const HeroSection = () => {
         >
           <div className="announcement-badge backdrop-blur-xl">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-            <span className="text-muted-foreground">Announcement</span>
+            <span className="text-muted-foreground">Built on TON Blockchain</span>
           </div>
         </motion.div>
 
-        {/* Main headline */}
+        {/* Headline */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center max-w-4xl mx-auto mb-6"
         >
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            AI agents that{" "}
-            <span className="text-vault-gradient">fund themselves</span>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+            AI agents on{" "}
+            <span className="text-vault-gradient">TON</span>
+            <br />
+            that <span className="text-vault-gradient">fund themselves</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground font-mono max-w-2xl mx-auto">
-            Build a vaultbot agent. Launch a token. Trading fees pay for your AI compute. No ongoing costs.
+            Build a Vault agent on TON. Bridge to Sui, Sei & Monad. Trading fees pay for your AI compute.
           </p>
         </motion.div>
 
-        {/* Feature cards with 3D tilt */}
+        {/* Feature cards */}
         <motion.div
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -120,12 +126,8 @@ const HeroSection = () => {
             >
               <GlassCard3D className="p-6 group cursor-pointer">
                 <feature.icon className="w-5 h-5 text-primary mb-3" />
-                <h3 className="font-mono text-primary text-sm font-semibold mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
+                <h3 className="font-mono text-primary text-sm font-semibold mb-2">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
               </GlassCard3D>
             </motion.div>
           ))}
@@ -148,7 +150,7 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* CTA buttons */}
+        {/* CTA */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -158,12 +160,8 @@ const HeroSection = () => {
           <a href="#" className="btn-vault">
             Vault Skills <ArrowRight size={16} />
           </a>
-          <a href="#" className="btn-outline-vault backdrop-blur-xl">
-            Tokenized Agents
-          </a>
-          <a href="#" className="btn-outline-vault backdrop-blur-xl">
-            Agent API Docs
-          </a>
+          <a href="#" className="btn-outline-vault backdrop-blur-xl">Tokenized Agents</a>
+          <a href="#" className="btn-outline-vault backdrop-blur-xl">Agent API Docs</a>
         </motion.div>
       </div>
     </section>
