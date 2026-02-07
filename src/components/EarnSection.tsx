@@ -2,8 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Shield, TrendingUp, ArrowRight } from "lucide-react";
 import GlassCard3D from "./GlassCard3D";
-import FloatingCharacter from "./FloatingCharacter";
-import treasureImg from "@/assets/treasure-chest.png";
+import Interactive3DScene from "./Interactive3DScene";
 
 const EarnSection = () => {
   const ref = useRef(null);
@@ -13,13 +12,10 @@ const EarnSection = () => {
     <section ref={ref} id="earn" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-transparent" />
 
-      <FloatingCharacter
-        src={treasureImg}
-        alt="Treasure Chest"
-        className="absolute right-8 bottom-10 z-10 hidden lg:block"
-        size={160}
-        floatDelay={0.7}
-        parallaxSpeed={0.5}
+      {/* Interactive 3D Coins */}
+      <Interactive3DScene
+        elements={['coins']}
+        className="opacity-70 pointer-events-none"
       />
 
       <div className="container mx-auto px-4 relative z-10">

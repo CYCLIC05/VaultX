@@ -3,8 +3,6 @@ import { useRef } from "react";
 import { Terminal, MessageSquare, Twitter, Send, Globe, ArrowRight } from "lucide-react";
 import GlassCard3D from "./GlassCard3D";
 import ParallaxSection from "./ParallaxSection";
-import FloatingCharacter from "./FloatingCharacter";
-import mascotImg from "@/assets/vault-mascot.png";
 
 const platforms = [
   { icon: Terminal, name: "Terminal", description: "Access your private terminal to trade on TON, bridge to Sui & Sei, and manage your wallet — all powered by AI.", cta: "Open Terminal", link: "#", featured: true },
@@ -21,14 +19,6 @@ const ConnectSection = () => {
 
   return (
     <section ref={ref} id="connect" className="py-24 relative overflow-hidden">
-      <FloatingCharacter
-        src={mascotImg}
-        alt="Vault Mascot"
-        className="absolute right-4 bottom-20 z-10 hidden lg:block"
-        size={140}
-        floatDelay={0.2}
-        parallaxSpeed={0.4}
-      />
 
       <div className="container mx-auto px-4">
         <ParallaxSection speed={0.1}>

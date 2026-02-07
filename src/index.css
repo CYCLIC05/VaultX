@@ -245,4 +245,17 @@
     z-index: 0;
     transition: opacity 0.3s;
   }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Enhanced backdrop blur for better glassmorphism */
+  @supports (backdrop-filter: blur(20px)) {
+    .glass-card,
+    .glass-card-3d {
+      backdrop-filter: blur(20px) saturate(180%);
+    }
+  }
 }

@@ -11,7 +11,12 @@ interface FloatingCharacterProps {
 }
 
 const FloatingCharacter = ({
-  src, alt, className = "", size = 200, floatDelay = 0, parallaxSpeed = 0.3
+  src,
+  alt,
+  className = "",
+  size = 200,
+  floatDelay = 0,
+  parallaxSpeed = 0.3
 }: FloatingCharacterProps) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -33,8 +38,12 @@ const FloatingCharacter = ({
         alt={alt}
         width={size}
         height={size}
-        className="drop-shadow-[0_0_30px_hsl(var(--vault-green)/0.3)] mix-blend-normal"
-        style={{ filter: "drop-shadow(0 0 20px hsl(var(--vault-green) / 0.2))" }}
+        className="drop-shadow-[0_0_30px_hsl(var(--vault-green)/0.3)]"
+        style={{
+          filter: "drop-shadow(0 0 20px hsl(var(--vault-green) / 0.2))",
+          mixBlendMode: "multiply",
+          opacity: 0.92
+        }}
         animate={{
           y: [0, -15, 0],
           rotate: [0, 3, -3, 0],
