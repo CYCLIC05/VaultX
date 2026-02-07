@@ -6,13 +6,15 @@ import FeaturesSection from "@/components/FeaturesSection";
 import EarnSection from "@/components/EarnSection";
 import ConnectSection from "@/components/ConnectSection";
 import Footer from "@/components/Footer";
+import CursorGlow from "@/components/CursorGlow";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <CursorGlow />
       <Header />
       <AnnouncementBar />
-      
+
       <main className="pt-12">
         <HeroSection />
         <StatsSection />
@@ -20,7 +22,7 @@ const Index = () => {
         <EarnSection />
         <ConnectSection />
       </main>
-      
+
       <Footer />
     </div>
   );

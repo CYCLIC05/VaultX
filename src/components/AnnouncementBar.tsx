@@ -7,19 +7,19 @@ const AnnouncementBar = () => {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.1 }}
-      className="fixed top-16 left-0 right-0 z-40 bg-primary/10 border-b border-primary/20"
+      className="fixed top-16 left-0 right-0 z-40 bg-primary/10 border-b border-primary/20 backdrop-blur-sm"
     >
       <div className="container mx-auto px-4 py-2">
-        <div className="flex items-center justify-center gap-2 text-sm">
+        <div className="flex items-center justify-center gap-2 text-sm flex-wrap">
           <Sparkles size={14} className="text-primary" />
           <span className="text-muted-foreground">
-            <span className="text-primary font-semibold">NEW:</span> Launch self-sustaining AI agents.
+            <span className="text-primary font-semibold">NEW:</span> Bridge TON to Sui, Sei & Monad.
           </span>
           <a href="#" className="text-primary hover:underline flex items-center gap-1">
             Explore Skills <ExternalLink size={12} />
           </a>
-          <span className="text-muted-foreground">or check out the</span>
-          <a href="#" className="text-primary hover:underline flex items-center gap-1">
+          <span className="text-muted-foreground hidden sm:inline">or check out the</span>
+          <a href="#" className="text-primary hover:underline flex items-center gap-1 hidden sm:flex">
             Leaderboard <ExternalLink size={12} />
           </a>
         </div>
