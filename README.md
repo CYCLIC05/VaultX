@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to your Lovable project
 
 ## Project info
@@ -71,3 +72,7 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+=======
+# VaultX
+Vault X is a conversion-first fintech and crypto infrastructure platform that enables direct exchange of retail gift cards and Telegram-native assets into TON.
+>>>>>>> a1da34a2e3002a722cb0e5b3c68a670e4f6c9664
